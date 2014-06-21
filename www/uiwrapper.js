@@ -3,15 +3,14 @@
  * User: yangzhen.jin@hp.com
  * Date: 6/21/14
  */
-cordova.define("com.hp.dreadwing.plugin.UiWrapper", function (require, exports, module) {
-    var exec = require("cordova/exec");
+var exec = require("cordova/exec");
 
-    function UiWrapper() {}
+function UiWrapper() {
+}
 
-    UiWrapper.prototype.reload = function (message, successCallback, errorCallback) {
-        exec(successCallback, errorCallback, 'UiWrapper', 'reload', [message]);
-    };
+UiWrapper.prototype.reload = function (message, successCallback, errorCallback) {
+    exec(successCallback, errorCallback, 'UiWrapper', 'reload', [message]);
+};
 
-    var uiwrapper = new UiWrapper();
-    module.exports = uiwrapper;
-});
+var uiwrapper = new UiWrapper();
+module.exports = uiwrapper;
