@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.hp.dreadwing.uiwrapper"
+        version="0.1.0">
+    <name>UiWrapper</name>
+    <description>a thin wrapper to the native ui view</description>
+    <license>Apache 2.0 License</license>
+
+    <engines>
+        <engine name="cordova" version=">=3.5.0" />
+    </engines>
+
+    <js-module src="www/uiwrapper.js" name="UiWrapper">
+        <clobbers target="cordova.plugins.uiwrapper" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="UiWrapper">
+                <param name="android-package" value="com.hp.dreadwing.plugin.UiWrapper"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/com/hp/dreadwing/plugin/UiWrapper.java" target-dir="src/com/hp/dreadwing/plugin" />
+    </platform>
+</plugin>
