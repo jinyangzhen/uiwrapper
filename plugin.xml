@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.hp.dreadwing.uiwrapper"
+        id="com.hp.dreadwing.plugin.UiWrapper"
         version="0.1.0">
     <name>UiWrapper</name>
     <description>a thin wrapper to the native ui view</description>

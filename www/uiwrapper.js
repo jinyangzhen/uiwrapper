@@ -3,7 +3,7 @@
  * User: yangzhen.jin@hp.com
  * Date: 6/21/14
  */
-cordova.define("com.hp.dreadwing.plugin.uiwrapper", function (require, exports, module) {
+cordova.define("com.hp.dreadwing.plugin.UiWrapper", function (require, exports, module) {
     var exec = require("cordova/exec");
 
     function UiWrapper() {}
