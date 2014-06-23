@@ -4,7 +4,6 @@
 package com.hp.dreadwing.plugin;
 
 import android.util.Log;
-import org.apache.cordova.CordovaActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.apache.cordova.CordovaPlugin;

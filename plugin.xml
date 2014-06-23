@@ -22,7 +22,17 @@
                 <param name="android-package" value="com.hp.dreadwing.plugin.UiWrapper"/>
             </feature>
         </config-file>
-
         <source-file src="src/android/com/hp/dreadwing/plugin/UiWrapper.java" target-dir="src/com/hp/dreadwing/plugin" />
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="UiWrapper">
+                <param name="ios-package" value="UiWrapper" />
+                <param name="onload"    value="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/UiWrapper.h" />
+        <source-file src="src/ios/UiWrapper.m"  />
     </platform>
 </plugin>
