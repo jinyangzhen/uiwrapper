@@ -30,14 +30,14 @@ public class UiWrapper extends CordovaPlugin {
                 public void run() {
                     act.reloadMainView();
                     Log.d("UiWrapper", "called by ui thread");
-                    ctxt.success("1234");
+                    ctxt.success("reload in success");
                 }
             });
 
             return true;
         }
 
-        callbackContext.error("Invalid action" + action + args);
+        callbackContext.error("Invalid action " + action + args);
         return false;
     }
 }

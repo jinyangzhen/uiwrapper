@@ -19,9 +19,13 @@
     AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     CDVViewController* topview = appDelegate.viewController;
     
-    [topview.webView stringByEvaluatingJavaScriptFromString:@"location='file:///index.html'"];
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"www/index" ofType:@"html"];
+    NSURL* url = [NSURL fileURLWithPath:path];
+    NSURLRequest* request = [NSURLRequest requestWithURL: url];
+    
+    [topview.webView loadRequest:request];
+
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"reloaded"];
-     //   pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
