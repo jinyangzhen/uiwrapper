@@ -8,8 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
-
-import com.hp.dreadwing.Mobility;
+import org.apache.cordova.CordovaActivity;
 
 /**
  * User: yangzhen.jin@hp.com
@@ -24,11 +23,11 @@ public class UiWrapper extends CordovaPlugin {
         final CallbackContext ctxt = callbackContext;
 
         if (action.equals(ACTION_RELOAD)) {
-            final Mobility act = (Mobility)cordova.getActivity();
+            final CordovaActivity act = (CordovaActivity)cordova.getActivity();
             act.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    act.reloadMainView();
+                    act.loadUrl("index.html");
                     Log.d("UiWrapper", "called by ui thread");
                     ctxt.success("reload in success");
                 }
