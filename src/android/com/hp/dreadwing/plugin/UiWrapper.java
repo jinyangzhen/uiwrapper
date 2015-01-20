@@ -27,7 +27,7 @@ public class UiWrapper extends CordovaPlugin {
             act.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    act.loadUrl("index.html");
+                    act.loadUrl("file:///android_asset/www/index.html"); //@TODO refactor to the config launch URL
                     Log.d("UiWrapper", "called by ui thread");
                     ctxt.success("reload in success");
                 }
